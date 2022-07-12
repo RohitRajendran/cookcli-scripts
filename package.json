@@ -1,0 +1,73 @@
+{
+  "name": "cookcli-scripts",
+  "displayName": "CookCLI Scripts",
+  "description": "CookCLI commands built into VSCode for easier use.",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.69.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "repository": "https://github.com/RohitRajendran/cookcli-scripts",
+  "activationEvents": [
+    "onCommand:cookcli-scripts.readRecipe",
+    "onCommand:cookcli-scripts.validateRecipe",
+    "onCommand:cookcli-scripts.prettifyRecipe",
+    "onCommand:cookcli-scripts.imageRecipe",
+    "onCommand:"
+  ],
+  "main": "./out/main.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "cookcli-scripts.readRecipe",
+        "title": "cookcli: Read Recipe"
+      },
+      {
+        "command": "cookcli-scripts.validateRecipe",
+        "title": "cookcli: Validate Recipe"
+      },
+      {
+        "command": "cookcli-scripts.prettifyRecipe",
+        "title": "cookcli: Prettify Recipe"
+      },
+      {
+        "command": "cookcli-scripts.imageRecipe",
+        "title": "cookcli: Get Image for Recipe"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build-base -- --minify",
+    "build-base": "esbuild ./src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node",
+    "build": "npm run build-base -- --sourcemap",
+    "watch": "npm run build-base -- --sourcemap --watch",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run build && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "7.2.0",
+    "@types/mocha": "9.1.1",
+    "@types/node": "16.x",
+    "@types/vscode": "1.69.0",
+    "@typescript-eslint/eslint-plugin": "5.30.6",
+    "@typescript-eslint/parser": "5.30.6",
+    "@vscode/test-electron": "2.1.5",
+    "esbuild": "0.14.49",
+    "eslint": "8.19.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "glob": "8.0.3",
+    "mocha": "10.0.0",
+    "ts-loader": "9.3.1",
+    "typescript": "4.7.4",
+    "vsce": "2.9.2"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.23.1"
+  }
+}

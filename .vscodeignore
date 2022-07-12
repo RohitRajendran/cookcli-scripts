@@ -1,0 +1,14 @@
+.bin/**
+.devcontainer/**
+.vscode/**
+.vscode-test/**
+out/test/**
+src/**
+.gitignore
+.editorconfig
+example-recipes/**
+vsc-extension-quickstart.md
+**/tsconfig.json
+**/.eslintrc.json
+**/*.map
+**/*.ts
