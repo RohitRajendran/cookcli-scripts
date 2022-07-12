@@ -17,6 +17,8 @@ Commands can be found in the command palette and under the tile of `cookcli:` an
 
 Parses and prints the recipe file
 
+https://user-images.githubusercontent.com/3478163/178563110-6413481f-0ca3-4be1-b154-929617d345ab.mov
+
 ### Validate Recipe
 
 Checks for syntax errors in the recipe file
