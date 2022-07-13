@@ -1,5 +1,6 @@
 {
   "name": "cookcli-scripts",
+  "publisher": "Rohit Rajendran",
   "displayName": "CookCLI Scripts",
   "description": "CookCLI commands built into VSCode to make it easier to work with Cooklang recipe files.",
   "version": "1.0.0",
@@ -51,7 +52,8 @@
     "watch-tests": "tsc -p . -w --outDir out",
     "pretest": "npm run compile-tests && npm run build && npm run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "test": "node ./out/test/runTest.js",
+    "deploy": "vsce publish --npm"
   },
   "devDependencies": {
     "@types/glob": "7.2.0",
