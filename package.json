@@ -21,7 +21,7 @@
     "onCommand:cookcli-scripts.imageRecipe",
     "onCommand:"
   ],
-  "icon": "./media/logo.png",
+  "icon": "media/logo.png",
   "main": "./out/main.js",
   "contributes": {
     "commands": [
