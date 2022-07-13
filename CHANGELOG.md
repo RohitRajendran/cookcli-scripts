@@ -4,6 +4,6 @@ All notable changes to the "cookcli-scripts" extension will be documented in thi
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Unreleased]
+## [v1.0.0]
 
 - Initial release that supports the `cook recipie` commands
