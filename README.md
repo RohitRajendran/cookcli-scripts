@@ -4,6 +4,8 @@ CookCLI commands built into VSCode to make it easier to work with Cooklang recip
 
 To learn more about Cooklang or CookCLI: https://cooklang.org/
 
+<img width="838" alt="example" src="https://user-images.githubusercontent.com/3478163/178862219-24495158-b304-4fa8-ad5b-01003ced7fad.png">
+
 ## Features
 
 Commands can be found in the command palette and under the tile of `cookcli:` and will be run against the recipe file that you currently have open.
