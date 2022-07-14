@@ -3,7 +3,7 @@
   "publisher": "RohitRajendran",
   "displayName": "CookCLI Scripts",
   "description": "CookCLI commands built into VSCode to make it easier to work with Cooklang recipe files.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "vscode": "^1.69.0"
   },
