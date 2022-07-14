@@ -14,7 +14,12 @@
     "eqeqeq": "warn",
     "no-throw-literal": "warn",
     "semi": "off",
-    "prettier/prettier": ["error"]
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "lf"
+      }
+    ]
   },
   "ignorePatterns": ["out", "dist", "**/*.d.ts"]
 }
