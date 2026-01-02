@@ -1,10 +1,29 @@
-import { Terminal, window } from "vscode";
+import { window } from "vscode";
+
+export interface TerminalLike {
+  show(): void;
+  sendText(text: string): void;
+}
+
+export interface WindowLike {
+  createTerminal(name: string): TerminalLike;
+  showErrorMessage(message: string): void;
+  activeTextEditor?: {
+    document: {
+      uri: {
+        fsPath: string;
+      };
+    };
+  };
+}
 
 export class ExtensionTerminal {
-  terminal: Terminal;
+  private terminal: TerminalLike;
+  private vscodeWindow: WindowLike;
 
-  constructor(terminalName: string) {
-    this.terminal = window.createTerminal(terminalName);
+  constructor(terminalName: string, vscodeWindow: WindowLike = window) {
+    this.vscodeWindow = vscodeWindow;
+    this.terminal = vscodeWindow.createTerminal(terminalName);
   }
 
   /**
@@ -14,13 +33,12 @@ export class ExtensionTerminal {
   sendTextForCurrentFile(commandPrefix: string) {
     this.terminal.show();
 
-    const filePath = window.activeTextEditor?.document.uri.fsPath;
-    const hasCookExtension =
-      window.activeTextEditor?.document.uri.fsPath.endsWith(".cook");
-    if (filePath !== undefined && hasCookExtension) {
+    const filePath = this.vscodeWindow.activeTextEditor?.document.uri.fsPath;
+    const hasCookExtension = filePath?.endsWith(".cook");
+    if (filePath && hasCookExtension) {
       this.terminal.sendText(`${commandPrefix} "${filePath}"`);
     } else {
-      window.showErrorMessage("Current file is not a recipie file");
+      this.vscodeWindow.showErrorMessage("Current file is not a recipe file");
     }
   }
 }

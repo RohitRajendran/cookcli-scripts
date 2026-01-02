@@ -1,0 +1,28 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "ignorePaths": [
+    ".git/**",
+    "node_modules/**",
+    "out/**",
+    "dist/**",
+    "media/**",
+    "package-lock.json"
+  ],
+  "words": [
+    "CookCLI",
+    "Cooklang",
+    "Rajendran",
+    "Rohit",
+    "amodio",
+    "cookcli",
+    "cooklang",
+    "dbaeumer",
+    "exthost",
+    "prettify",
+    "tsconfig",
+    "vsce",
+    "vscode",
+    "xvfb"
+  ]
+}

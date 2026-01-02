@@ -1,15 +1,28 @@
-import * as assert from "assert";
-
-// You can import and use all API from the 'vscode' module
-// as well as import your extension to test it
 import * as vscode from "vscode";
-// import * as myExtension from '../../extension';
 
 suite("Extension Test Suite", () => {
-  vscode.window.showInformationMessage("Start all tests.");
+  test("Registers all commands on activation", async () => {
+    const extension = vscode.extensions.getExtension(
+      "RohitRajendran.cookcli-scripts",
+    );
+    if (!extension) {
+      throw new Error("Extension not found");
+    }
 
-  test("Sample test", () => {
-    assert.strictEqual(-1, [1, 2, 3].indexOf(5));
-    assert.strictEqual(-1, [1, 2, 3].indexOf(0));
+    await extension.activate();
+
+    const commands = await vscode.commands.getCommands(true);
+    const expected = [
+      "cookcli-scripts.readRecipe",
+      "cookcli-scripts.validateRecipe",
+      "cookcli-scripts.prettifyRecipe",
+      "cookcli-scripts.imageRecipe",
+    ];
+
+    for (const command of expected) {
+      if (!commands.includes(command)) {
+        throw new Error(`Missing command: ${command}`);
+      }
+    }
   });
 });
