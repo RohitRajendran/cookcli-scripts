@@ -52,28 +52,36 @@
     "watch-tests": "tsc -p . -w --outDir out",
     "pretest": "npm run compile-tests && npm run build && npm run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js",
+    "lint:fix": "eslint src --ext ts --fix",
+    "format": "prettier --write \"**/*.{ts,js,json,md,yml,yaml}\"",
+    "spellcheck": "cspell lint \"**/*.{md,ts,js,json,yml,yaml}\"",
+    "test": "vscode-test",
     "deploy": "vsce publish"
   },
   "devDependencies": {
-    "@types/glob": "7.2.0",
-    "@types/mocha": "9.1.1",
-    "@types/node": "16.x",
+    "@types/mocha": "10.0.10",
+    "@types/node": "25.x",
     "@types/vscode": "1.107.0",
-    "@typescript-eslint/eslint-plugin": "5.62.0",
-    "@typescript-eslint/parser": "5.30.6",
+    "@typescript-eslint/eslint-plugin": "8.51.0",
+    "@typescript-eslint/parser": "8.51.0",
+    "@vscode/test-cli": "0.0.12",
     "@vscode/test-electron": "2.5.2",
     "esbuild": "0.27.2",
-    "eslint": "8.19.0",
-    "eslint-config-prettier": "8.5.0",
-    "eslint-plugin-prettier": "4.2.1",
-    "glob": "8.0.3",
-    "mocha": "10.0.0",
+    "eslint": "9.39.2",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-prettier": "5.5.4",
+    "cspell": "9.2.1",
+    "glob": "13.0.0",
+    "mocha": "11.7.5",
+    "prettier": "3.6.2",
     "ts-loader": "9.5.4",
-    "typescript": "4.7.4",
-    "vsce": "2.15.0"
+    "typescript": "5.9.3",
+    "@vscode/vsce": "3.7.1"
   },
   "dependencies": {
     "@changesets/cli": "^2.29.8"
+  },
+  "overrides": {
+    "diff": "6.0.0"
   }
 }

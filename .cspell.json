@@ -1,0 +1,23 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "ignorePaths": [
+    ".git/**",
+    "node_modules/**",
+    "out/**",
+    "dist/**",
+    "media/**",
+    "package-lock.json"
+  ],
+  "words": [
+    "CookCLI",
+    "Cooklang",
+    "cookcli",
+    "cooklang",
+    "prettify",
+    "tsconfig",
+    "vsce",
+    "vscode",
+    "xvfb"
+  ]
+}
