@@ -10,7 +10,7 @@ To learn more about Cooklang or CookCLI: https://cooklang.org/
 
 Commands can be found in the command palette and under the tile of `cookcli:` and will be run against the recipe file that you currently have open.
 
-1. Open up the recipie file that you want to run the command for.
+1. Open up the recipe file that you want to run the command for.
 1. Open Command Palette with `cmd + shift + P` or `ctrl + shift + P`
 1. Search for `cookcli:` to see all the commands available.
 1. Select a command. A terminal window will open up where you can see the results of the command.
